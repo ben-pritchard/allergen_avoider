@@ -17,9 +17,9 @@
             <br>
             {% if suitable_restaurants is not empty %}
                 <h3>Restaurants:</h3>
-                <ul>
+                <ul class="pink">
                 {% for restaurant in suitable_restaurants %}
-                    <li>{{ restaurant.getName }}</li>
+                    <li><a href="restaurants/{{ restaurant.getId }}">{{ restaurant.getName }}</a></li>
                 {% endfor %}
                 </ul>
             {% else %}

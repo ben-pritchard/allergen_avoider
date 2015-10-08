@@ -4,3 +4,4 @@ SELECT id FROM options WHERE (name = "Peanut-free");
 QUESTIONS:
 
 Why doesn't the hidden delete method input field work on the restaurants info page?
+Is there a form action "back" to whatever page the user was on before?
