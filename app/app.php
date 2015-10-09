@@ -12,10 +12,23 @@
     // Set Silex debug mode in $app object
     $app['debug'] = true;
 
-    $server = 'mysql:host=localhost:8889;dbname=allergen_avoider';
-    $username = 'root';
-    $password = 'root';
-    $DB = new PDO($server, $username, $password);
+    // LOCAL ENVIRONMENT =======================================================
+    // $server = 'mysql:host=localhost;dbname=allergen_avoider';
+    // $username = 'root';
+    // $password = 'root';
+    // $DB = new PDO($server, $username, $password);
+    // =========================================================================
+
+    // PRODUCTION ENVIRONMENT ==================================================
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+
+    $DB = new PDO($server, $username, $password, $db);
+    // =========================================================================
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
