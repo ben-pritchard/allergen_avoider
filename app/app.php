@@ -27,7 +27,7 @@
     $password = $url["pass"];
     $db = substr($url["path"], 1);
 
-    $DB = new PDO($server, $username, $password, $db);
+    $DB = new PDO($server, $username, $password);
     // =========================================================================
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
