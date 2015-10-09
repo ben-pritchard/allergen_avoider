@@ -23,7 +23,7 @@
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $host = $url["host"];
-    $dbname = $url["dbname"];
+    $dbname = $url["path"];
     $server = "mysql:host=".$host.": dbname=".$dbname.";";
     $username = $url["user"];
     $password = $url["pass"];
