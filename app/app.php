@@ -22,7 +22,9 @@
     // PRODUCTION ENVIRONMENT ==================================================
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $server = $url["host"];
+    $host = $url["host"];
+    $dbname = $url["dbname"];
+    $server = "mysql:host=".$host.": dbname=".$dbname.";";
     $username = $url["user"];
     $password = $url["pass"];
     // $db = substr($url["path"], 1);
