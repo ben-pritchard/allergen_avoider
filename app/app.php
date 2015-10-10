@@ -23,11 +23,11 @@
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $host = $url["host"];
-    $dbname = $url["path"];
-    $server = "mysql:host=".$host.": dbname=".$dbname.";";
+    // $dbname = $url["path"];
+    $dbname2 = substr($url["path"], 1);
+    $server = "mysql:host=".$host.": dbname=".$dbname2.";";
     $username = $url["user"];
     $password = $url["pass"];
-    // $db = substr($url["path"], 1);
 
     $DB = new PDO($server, $username, $password);
     // =========================================================================
