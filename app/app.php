@@ -32,6 +32,12 @@
     $DB = new PDO($server, $username, $password);
     // =========================================================================
 
+    // Register the monolog logging service
+    $app->register(new Silex\Provider\MonologServiceProvider(), array(
+      'monolog.logfile' => 'php://stderr',
+    ));
+
+    // Register view rendering
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
     ));
@@ -40,7 +46,7 @@
         Request::enableHttpMethodParameterOverride();
 
     $app->get('/', function() use ($app) {
-        return $app['twig']->render('index.html.twig', array('options' => Option::getAll()));
+        return $app['twig']->render('index.html.twig');#, array('options' => Option::getAll()));
     });
 
     $app->post('/options', function() use ($app) {
