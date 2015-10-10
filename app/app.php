@@ -23,9 +23,9 @@
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $host = $url["host"];
-    // $dbname = $url["path"];
-    $dbname2 = substr($url["path"], 1);
-    $server = "mysql:host=".$host.": dbname=".$dbname2.";";
+    $dbname = $url["path"];
+    // $dbname2 = substr($url["path"], 1)
+    $server = "mysql:host=".$host.": dbname=".$dbname.";";
     $username = $url["user"];
     $password = $url["pass"];
 
@@ -35,6 +35,9 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
     ));
+
+    use Symfony\Component\HttpFoundation\Request;
+        Request::enableHttpMethodParameterOverride();
 
     $app->get('/', function() use ($app) {
         return $app['twig']->render('index.html.twig', array('options' => Option::getAll()));
