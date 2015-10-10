@@ -13,7 +13,7 @@
     $app['debug'] = true;
 
     // LOCAL ENVIRONMENT =======================================================
-    // $server = 'mysql:host=localhost;dbname=allergen_avoider';
+    // $server = 'mysql:host=localhost:8889;dbname=allergen_avoider';
     // $username = 'root';
     // $password = 'root';
     // $DB = new PDO($server, $username, $password);
