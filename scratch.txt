@@ -1,7 +1,20 @@
-SELECT id FROM options WHERE (name = "Peanut-free");
+Install NewRelicAPM? - Heroku addon
 
 
 QUESTIONS:
 
 Why doesn't the hidden delete method input field work on the restaurants info page?
+- Need to add to app.php:
+    // Register patch and delete http methods
+    use Symfony\Component\HttpFoundation\Request;
+        Request::enableHttpMethodParameterOverride();
+
 Is there a form action "back" to whatever page the user was on before?
+- Nothing easy...
+    Could pass around a previous page variable in all routes
+    Could research further
+
+
+HOSTING ON HEROKU:
+
+Great tutorial found here: https://devcenter.heroku.com/articles/getting-started-with-php#introduction

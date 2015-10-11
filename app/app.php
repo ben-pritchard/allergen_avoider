@@ -42,6 +42,7 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
+    // Register patch and delete http methods
     use Symfony\Component\HttpFoundation\Request;
         Request::enableHttpMethodParameterOverride();
 
