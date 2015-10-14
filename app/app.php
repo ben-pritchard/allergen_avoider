@@ -41,9 +41,9 @@
     // =========================================================================
 
     // Register the monolog logging service
-    $app->register(new Silex\Provider\MonologServiceProvider(), array(
-      'monolog.logfile' => 'php://stderr',
-    ));
+    // $app->register(new Silex\Provider\MonologServiceProvider(), array(
+    //   'monolog.logfile' => 'php://stderr',
+    // ));
 
     // Register view rendering
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
