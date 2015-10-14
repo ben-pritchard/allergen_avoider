@@ -18,3 +18,22 @@ Is there a form action "back" to whatever page the user was on before?
 HOSTING ON HEROKU:
 
 Great tutorial found here: https://devcenter.heroku.com/articles/getting-started-with-php#introduction
+
+HOSTING ON OPENSHIFT:
+
+Database Info:
+MySQL 5.5 database added.  Please make note of these credentials:
+
+       Root User: adminh9NzmMb
+   Root Password: pac51SlR5giW
+   Database Name: php
+
+Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
+
+You can manage your new MySQL database by also embedding phpmyadmin.
+The phpmyadmin username and password will be the same as the MySQL credentials above.
+
+Please make note of these MySQL credentials again:
+  Root User: adminh9NzmMb
+  Root Password: pac51SlR5giW
+URL: https://php-restaurantpicker.rhcloud.com/phpmyadmin/
