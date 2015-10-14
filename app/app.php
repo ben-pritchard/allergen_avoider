@@ -55,7 +55,7 @@
         Request::enableHttpMethodParameterOverride();
 
     $app->get('/', function() use ($app) {
-        return $app['twig']->render('index.html.twig');#, array('options' => Option::getAll()));
+        return $app['twig']->render('index.html.twig', array('options' => Option::getAll()));
     });
 
     $app->post('/options', function() use ($app) {
