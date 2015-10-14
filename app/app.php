@@ -19,15 +19,23 @@
     // $DB = new PDO($server, $username, $password);
     // =========================================================================
 
-    // PRODUCTION ENVIRONMENT ==================================================
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    // HEROKU PRODUCTION ENVIRONMENT ===========================================
+    // $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    //
+    // $host = $url["host"];
+    // $dbname = $url["path"];
+    // // $dbname2 = substr($url["path"], 1)
+    // $server = "mysql:host=".$host.": dbname=".$dbname.";";
+    // $username = $url["user"];
+    // $password = $url["pass"];
+    //
+    // $DB = new PDO($server, $username, $password);
+    // =========================================================================
 
-    $host = $url["host"];
-    $dbname = $url["path"];
-    // $dbname2 = substr($url["path"], 1)
-    $server = "mysql:host=".$host.": dbname=".$dbname.";";
-    $username = $url["user"];
-    $password = $url["pass"];
+    // OPENSHIFT PRODUCTION ENVIRONMENT ========================================
+    $server = 'mysql:host=127.9.195.130;dbname=php';
+    $username = 'adminh9NzmMb';
+    $password = 'pac51SlR5giW';
 
     $DB = new PDO($server, $username, $password);
     // =========================================================================
